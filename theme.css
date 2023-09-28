@@ -1,0 +1,25 @@
+/* @theme magland-theme */
+
+@import 'default';
+
+section {
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #F6862D; /* This is CCM color */
+}
+
+h2 {
+    color: #AA5;
+    font-size: 1.2em;
+    color: #F6862D; /* This is CCM color */
+}
+
+p {
+    font-size: 0.9em;
+}
+
+li {
+    font-size: 0.9em;
+}
