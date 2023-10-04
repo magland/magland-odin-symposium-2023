@@ -11,6 +11,8 @@ footer: Magland ODIN Symposium 2023
 
 Jeremy Magland, Center for Computational Mathematics, Flatiron Institute
 
+ODIN Symposium 2023
+
 With:
 
 - Flatiron Institute: Jeff Soules
@@ -23,7 +25,9 @@ With:
 
 - **Easy to use:** no installation
 - **Easy to share:** copy-paste the link
-- **Advantages for the developer:** no need to worry about installation, cross-platform compatibility, etc.
+- **Cross-platform:** all desktop options and mobile
+- **Development cycle advantages:** simplifies distribution, etc.
+- **Integrates naturally with cloud resources:** e.g., DANDI
 * **Limitations:** no native access to local files/software, requires internet connection, limited access to previous versions, requires coding in JavaScript
 
 ---
@@ -32,7 +36,7 @@ With:
 
 - [Figurl](https://github.com/flatironinstitute/figurl): framework for creating shareable interactive visualizations
 - [Neurosift](https://github.com/flatironinstitute/neurosift): static web app for visualizing NWB files hosted in the cloud (DANDI)
-- [Protocaas](https://github.com/scratchrealm/protocaas2): web app for analyzing neurophysiology data in the cloud (or with cluster/local compute)
+- [Protocaas](https://github.com/scratchrealm/protocaas2): prototype web app for analyzing neurophysiology data in the cloud (or with cluster/local compute)
 
 ---
 
@@ -187,6 +191,7 @@ z = kcl.load_pkl("sha1://20d178d5a1264fc3267e38ca238c23f3e2dcd5d2?label=example.
 ## Neurosift: Goals
 
 - Visualize / browse NWB files hosted on DANDI (and elsewhere)
+- Also view local NWB files
 - No installation required
 - No server backend required (client-only)
 - Efficiently read data lazily from HDF5 files (h5wasm fork)
@@ -219,6 +224,20 @@ Forked version of h5wasm that uses efficient/smart chunking optimized for readin
 
 [https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm](https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm)
 
+
+---
+
+## Neurosift: viewing local files
+
+* Prerequisite: [NodeJS v16 or higher](https://nodejs.org/en/download)
+* Install the neurosift Python package: `pip install --upgrade neurosift`
+* Run the following command in a terminal window:
+
+```bash
+neurosift view-nwb /path/to/file.nwb
+```
+
+This will open a web browser window with the Neurosift web app pointing to a symlinked copy of your file. You can then browse the file and visualize its contents.
 
 ---
 
@@ -311,3 +330,49 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 ## Protocaas spike sorting: Provenance stored in DANDI metadata
 
 <img src="https://github.com/magland/magland-odin-symposium-2023/assets/3679296/a261bad0-0ba3-4072-a4a3-e0e6fae52f18" width="85%" />
+
+---
+
+## Protocaas containerized processors (some technical details)
+
+- Each spike sorter is packaged as a processor within a Protocaas app
+- Here are the definitions for [kilosort3](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort3/main) and [mountainsort5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/mountainsort5/main) processors.
+- Apps are executables that live in containers for production, or on a file system during development
+- When run with the appropriate environment variables, apps can:
+    - Produce a spec.json (the input/output specs for the processors)
+    - Run a job with that processor
+    - During job execution the processor interacts with the central Protocaas API
+        - Load the job inputs
+        - Report the status and console output
+        - Upload the job outputs
+
+---
+
+## Protocaas compute resources
+
+- Users can use the default compute resources
+- Or configure their own compute resources
+- A compute resource is a daemon that runs on some server or machine
+    - Watches for new jobs in the Protocaas database
+    - Spawns the jobs based on the configuration (AWS, Slurm, local machine)
+- Jobs are autonomous
+    - Capable of reporting their own status to the central system
+    - Does not need to communicate with the daemon
+
+---
+
+## Summary
+
+Some tools for visualization and analysis of neurophysiology data are in progress:
+
+- Figurl
+    - Stable
+- Neurosift
+    - Initial version is stable
+- Protocaas
+    - Under active development, with CatalystNeuro
+
+---
+
+## Thank you
+
