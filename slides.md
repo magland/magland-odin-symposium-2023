@@ -7,17 +7,21 @@ footer: Magland ODIN Symposium 2023
 
 <!-- For using custom theme, see https://github.com/orgs/marp-team/discussions/115 -->
 
-# Web-based visualization and analysis of neurophysiology data
+## Web-based visualization and analysis of neurophysiology data
+
+![bg right:30% 100%](https://user-images.githubusercontent.com/3679296/273382387-e0e76888-5edf-4b20-8a76-eeb02be434cc.png)
 
 Jeremy Magland, Center for Computational Mathematics, Flatiron Institute
-
-ODIN Symposium 2023
 
 With:
 
 - Flatiron Institute: Jeff Soules
 - Frank lab: Loren Frank, Eric denovellis, Kyu Hyun Lee, Alison Comrie, Michael Coulter
 - CatalystNeuro: Ben Dichter, Alessio Buccino, Luiz Tauffer, Cody Baker
+
+ODIN Symposium 2023
+
+https://github.com/magland/magland-odin-symposium-2023
 
 ---
 
@@ -432,5 +436,16 @@ Some tools for visualization and analysis of neurophysiology data are in progres
 
 ## Thank you
 
-- Q&A
+##### Figurl
 
+Jeff Soules, Alessio Buccino, Loren Frank, Eric denovellis, Kyu Hyun Lee, Alison Comrie, Michael Coulter
+
+##### Neurosift
+
+Jeff Soules, Ben Dichter, Cody Baker
+
+##### Protocaas
+
+Ben Dichter, Luiz Tauffer
+
+##### Thanks also to the DANDI team!
