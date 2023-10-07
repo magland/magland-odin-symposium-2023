@@ -21,7 +21,7 @@ With:
 
 ODIN Symposium 2023
 
-https://github.com/magland/magland-odin-symposium-2023
+Follow along: https://github.com/magland
 
 ---
 
@@ -431,6 +431,8 @@ Some tools for visualization and analysis of neurophysiology data are in progres
     - Initial version is stable
 - Protocaas
     - Under active development, with CatalystNeuro
+    - Almost ready for beta testers
+    - Submit your name ideas!
 
 ---
 
