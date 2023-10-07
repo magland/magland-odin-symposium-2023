@@ -40,17 +40,17 @@ With:
 
 ---
 
-## Figurl: Goals
+## Figurl: overview
 
 ![bg right:25% 80%](https://user-images.githubusercontent.com/3679296/269425776-52d0eec8-35b4-40be-b5f1-44937265ba77.png)
 
-- Simplify sharing of interactive web-based visualizations
+- Creation of feature-rich interactive visualization plugins, especially for neuroscience
+- Simplifies sharing of figures
     - Run a Python script to generate a shareable URL
-    - Frictionless data sharing
-- Enable creation of feature-rich interactive visualization plugins, especially for neuroscience
-    - Distributed as static HTML bundles
+- Custom visualization plugins
+    - Static HTML bundles in the cloud
     - React/typescript
-- Promote scientific reproducibility
+- Promotes scientific collaboration, communication, reproducibility
 
 ---
 
@@ -188,7 +188,7 @@ z = kcl.load_pkl("sha1://20d178d5a1264fc3267e38ca238c23f3e2dcd5d2?label=example.
 ```
 ---
 
-## Neurosift: Goals
+## Neurosift: overview
 
 - Visualize / browse NWB files hosted on DANDI (and elsewhere)
 - Also view local NWB files
@@ -205,6 +205,58 @@ Browse to a DANDI NWB file and click to open in Neurosift
 
 ![neurosift dandi integration](https://user-images.githubusercontent.com/3679296/272268075-24a0a6b0-8e66-4334-a3f5-9c186cdfae8f.png)
 
+
+---
+## Neurosift: NWB file browser
+
+<img src="https://user-images.githubusercontent.com/3679296/272936637-c20dec5c-57b4-4d89-a598-2aa83834c6db.png" height="90%" />
+
+[link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced)
+
+---
+
+## Neurosift: ElectricalSeries
+
+<img src="https://user-images.githubusercontent.com/3679296/258136572-7a552496-b2a5-462b-bbf4-bf85de966a4c.png" height="80%" />
+
+[link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=neurodata-item:/acquisition/ElectricalSeries|ElectricalSeries&tab-time=0,0.05385543094453243,0.009716474540105546)
+
+---
+
+## Neurosift: lazy loading from remote HDF5 files
+
+![bg right:30% 50%](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/600px-WebAssembly_Logo.svg.png)
+
+
+Forked version of h5wasm that uses efficient/smart chunking optimized for reading HDF5 using WebAssembly and web workers.
+
+[https://github.com/usnistgov/h5wasm](https://github.com/usnistgov/h5wasm)
+
+[https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm](https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm)
+
+---
+
+## Neurosift: Raster plot (spike trains)
+
+<img src="https://user-images.githubusercontent.com/3679296/257921972-ae07e2c4-a30e-4325-9fdf-e14e20309d09.png" height="70%" />
+
+[link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=view:RasterPlot|/units&tab-time=0.0018000000000029104,239.58180000000007,96.43037142857143)
+
+---
+
+## Neurosift: Synchronized views
+
+<img src="https://user-images.githubusercontent.com/3679296/272945539-7215b424-2d86-4a90-805f-6b5363528262.png" width="20%" /> &nbsp; <img src="https://user-images.githubusercontent.com/3679296/257916088-dfb3e1b8-046d-4390-afac-657f9c3f930c.png" width="70%" />
+
+
+---
+
+## Neurosift: Peri-stimulus time histogram (PSTH)
+
+<img src="https://user-images.githubusercontent.com/3679296/257919770-d889d459-9052-4ea0-b378-b6b5ad2fbf30.png" height="70%" />
+
+[link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/df3/e3f/df3e3f73-50ab-42b4-8827-82664ddd474a&tab=view:PSTH|/intervals/trials)
+
 ---
 
 ## Neurosift examples
@@ -213,25 +265,14 @@ https://github.com/flatironinstitute/neurosift/wiki/Neurosift-DANDI-Examples
 
 Neurodata types: [ImageSegmentation](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/368/fa7/368fa71e-4c93-4f7e-af15-06776ca07f34&tab=neurodata-item:/processing/ophys/ImageSegmentation|ImageSegmentation) | [SpatialSeries](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=neurodata-items:neurodata-item:/acquisition/position_sensor0|SpatialSeries@view:X/Y|/acquisition/position_sensor0&tab-time=0,384,117.50619637750238) | [TwoPhotonSeries](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/368/fa7/368fa71e-4c93-4f7e-af15-06776ca07f34&tab=neurodata-item:/acquisition/TwoPhotonSeries1|TwoPhotonSeries&tab-time=10.098519662000001,6361.5098989352,750.7224614147053) | [TimeSeries](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=neurodata-item:/acquisition/ch_SsolL|TimeSeries&tab-time=43.82871078730636,95.27484222730642,72.51887941685835) | [TimeIntervals](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/cae/e8f/caee8f64-ebeb-439d-a3f4-e3380699b49f&tab=neurodata-item:/intervals/trials|TimeIntervals) | [PSTH](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/df3/e3f/df3e3f73-50ab-42b4-8827-82664ddd474a&tab=view:PSTH|/intervals/trials) | [ElectricalSeries](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=neurodata-item:/acquisition/ElectricalSeries|ElectricalSeries&tab-time=0,0.05385543094453243,0.009716474540105546) | [LabeledEvents](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/80d/c44/80dc4460-7652-4b88-97ce-69a7e8be5d60&tab=neurodata-item:/processing/behavior/RewardEventsLinearTrack|LabeledEvents&tab-time=5731.0227,10222.015166753623,9596.949592555065) | [ImageSeries](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/8cf/38e/8cf38e36-6cd8-4c10-9d74-c2e6be70f019&dandi-asset=https://api.dandiarchive.org/api/dandisets/000568/versions/0.230705.1633/assets/9fc5a60e-af09-4099-ac22-ee54211f55e4/&tab=neurodata-item:/acquisition/ImageSeriesTrackingVideo1|ImageSeries) | [RasterPlot](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=view:RasterPlot|/units&tab-time=0.0018000000000029104,239.58180000000007,96.43037142857143) | [Autocorrelograms](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=view:Autocorrelograms|/units) | [Images](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/368/fa7/368fa71e-4c93-4f7e-af15-06776ca07f34&tab=neurodata-item:/processing/ophys/SegmentationImages1|Images) | [BehavioralEvents](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/645/10d/64510d67-fab1-45ab-abc3-b18c9738412c&tab=neurodata-item:/processing/behavior/behavioral_events|BehavioralEvents) | ...
 
----
-
-## Neurosift reads data lazily from remote HDF5 files
-
-
-Forked version of h5wasm that uses efficient/smart chunking optimized for reading HDF5.
-
-[https://github.com/usnistgov/h5wasm](https://github.com/usnistgov/h5wasm)
-
-[https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm](https://github.com/flatironinstitute/neurosift/tree/main/gui/src/pages/NwbPage/RemoteH5File/h5wasm)
-
 
 ---
 
 ## Neurosift: viewing local files
 
-* Prerequisite: [NodeJS v16 or higher](https://nodejs.org/en/download)
-* Install the neurosift Python package: `pip install --upgrade neurosift`
-* Run the following command in a terminal window:
+- Prerequisite: [NodeJS v16 or higher](https://nodejs.org/en/download)
+- Install the neurosift Python package: `pip install --upgrade neurosift`
+- Run the following command in a terminal window:
 
 ```bash
 neurosift view-nwb /path/to/file.nwb
@@ -241,7 +282,7 @@ This will open a web browser window with the Neurosift web app pointing to a sym
 
 ---
 
-## Protocaas: goals
+## Protocaas: overview
 
 Protocaas is a **prototype** web-based tool for analyzing neurophysiology data in the cloud (or with cluster/local compute).
 
@@ -250,6 +291,7 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 - Also allow option of using local machines or compute clusters
 - Starting with spike sorting, but will expand
 - Tight integration with DANDI and NWB
+- Uses SpikeInterface and SI spike sorter docker images
 
 ---
 
@@ -333,7 +375,19 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 
 ---
 
-## Protocaas containerized processors (some technical details)
+## Protocaas: advantages
+
+- Scalability: you can spike sort many sessions at once
+- Reproducibility: use AWS and get the exact same results
+- Provenance: Jobs store all necessary metadata
+- Compute flexibility: local, slurm cluster, cloud
+- Access to sorters: not always easy to set up even when using SpikeInterface
+- Collaboration: add other GitHub users to a workspace
+- Integration with DANDI
+
+---
+
+## Protocaas containerized processors
 
 - Each spike sorter is packaged as a processor within a Protocaas app
 - Here are the definitions for [kilosort3](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort3/main) and [mountainsort5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/mountainsort5/main) processors.
@@ -349,6 +403,8 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 ---
 
 ## Protocaas compute resources
+
+![bg right:40% 90%](https://user-images.githubusercontent.com/3679296/272931152-c8d5bccb-2349-4326-b802-f95f141b508a.png)
 
 - Users can use the default compute resources
 - Or configure their own compute resources
@@ -375,4 +431,6 @@ Some tools for visualization and analysis of neurophysiology data are in progres
 ---
 
 ## Thank you
+
+- Q&A
 
