@@ -393,16 +393,12 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 
 ## Protocaas containerized processors
 
-- Each spike sorter is packaged as a processor within a Protocaas app
-- Here are the definitions for [kilosort3](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort3/main) and [mountainsort5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/mountainsort5/main) processors.
-- Apps are executables that live in containers for production, or on a file system during development
-- When run with the appropriate environment variables, apps can:
-    - Produce a spec.json (the input/output specs for the processors)
-    - Run a job with that processor
-    - During job execution the processor interacts with the central Protocaas API
-        - Load the job inputs
-        - Report the status and console output
-        - Upload the job outputs
+- Each spike sorter is a processor within a Protocaas app
+- Existing apps: [Kilosort 2.5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort2_5/main), [Kilosort 3](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort3/main) and [MountainSort 5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/mountainsort5/main)
+    - SpikeInterface
+    - SpikeInterface-dockerfiles
+- Apps live in containers for production, or on file systems during development
+- It's relatively easy to make custom processor apps
 
 ---
 
