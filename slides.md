@@ -13,7 +13,7 @@ footer: Magland ODIN Symposium 2023
 
 Jeremy Magland, Center for Computational Mathematics, Flatiron Institute
 
-With:
+... with ...
 
 - Flatiron Institute: Jeff Soules
 - Frank lab: Loren Frank, Eric denovellis, Kyu Hyun Lee, Alison Comrie, Michael Coulter
@@ -27,6 +27,8 @@ Follow along: https://github.com/magland
 
 ## Why web-based software?
 
+![bg right:30% 80%](https://live.staticflickr.com/8364/8270409318_bdd1115652_w.jpg)
+
 - **Easy to use:** no installation
 - **Easy to share:** copy-paste the link
 - **Cross-platform:** all desktop options and mobile
@@ -36,7 +38,7 @@ Follow along: https://github.com/magland
 
 ---
 
-## Three web-based tools for neurophysiology visualization and analysis
+## We will introduce three web-based tools for neurophysiology visualization and analysis
 
 - [Figurl](https://github.com/flatironinstitute/figurl): framework for creating shareable interactive visualizations
 - [Neurosift](https://github.com/flatironinstitute/neurosift): static web app for visualizing NWB files hosted in the cloud (DANDI)
@@ -122,20 +124,20 @@ print(url)
 
 ---
 
-## Figurl: Other examples (see gallery)
+## Figurl: Other examples - [gallery](https://magland.github.io/figurl-gallery-viewer/)
 
 <image src="https://user-images.githubusercontent.com/3679296/271276312-886a4aec-f972-4d9c-a821-19a2ae3d0de2.png" width="95%" />
 
 
 ---
 
-## Figurl: Other examples (see gallery)
+## Figurl: Other examples - [gallery](https://magland.github.io/figurl-gallery-viewer/)
 
 <image src="https://user-images.githubusercontent.com/3679296/271276944-449ddb6a-d640-48b2-9ee3-655ecb82e2fd.png" width="95%" />
 
 ---
 
-## Figurl: Other examples (see gallery)
+## Figurl: Other examples - [gallery](https://magland.github.io/figurl-gallery-viewer/)
 
 <image src="https://user-images.githubusercontent.com/3679296/271277359-9622d633-c375-467c-9549-3a69ca1616d9.png" width="95%" />
 
@@ -200,6 +202,7 @@ z = kcl.load_pkl("sha1://20d178d5a1264fc3267e38ca238c23f3e2dcd5d2?label=example.
 - No server backend required (client-only)
 - Efficiently read data lazily from HDF5 files (h5wasm fork)
 - Similar to NWBWidgets
+- Developed in collaboration with CatalystNeuro
 
 ---
 
