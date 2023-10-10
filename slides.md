@@ -42,7 +42,7 @@ Follow along: https://github.com/magland
 
 - [Figurl](https://github.com/flatironinstitute/figurl): framework for creating shareable interactive visualizations
 - [Neurosift](https://github.com/flatironinstitute/neurosift): static web app for visualizing NWB files hosted in the cloud (DANDI)
-- [Protocaas](https://github.com/scratchrealm/protocaas2): prototype web app for analyzing neurophysiology data in the cloud (or with cluster/local compute)
+- [Protocaas](https://github.com/scratchrealm/protocaas2): **prototype** web app for analyzing neurophysiology data in the cloud (or with cluster/local compute)
 
 ---
 
@@ -50,13 +50,13 @@ Follow along: https://github.com/magland
 
 ![bg right:25% 80%](https://user-images.githubusercontent.com/3679296/269425776-52d0eec8-35b4-40be-b5f1-44937265ba77.png)
 
-- Creation of feature-rich interactive visualization plugins, especially for neuroscience
-- Simplifies sharing of figures
+- Simplifies sharing of interactive figures
     - Run a Python script to generate a shareable URL
-- Custom visualization plugins
+- Create custom visualization plugins
     - Static HTML bundles in the cloud
     - React/typescript
 - Promotes scientific collaboration, communication, reproducibility
+- Focus on neurophysiology, but can be used for other domains
 
 ---
 
@@ -148,14 +148,11 @@ print(url)
 ![bg right:50% 100%](https://user-images.githubusercontent.com/3679296/271279738-995996c6-a545-4cf7-9f5d-5473ca302547.png)
 
 Kachery is a Content Addressable Storage database in the cloud
-- Download from anywhere
 - Minimal configuration for upload
-- Python client
-- Command-line client
-- Serverless deployment
+- Download from anywhere
+- Python client or Command-line client
+- Serverless infrastructure
 - Organized into zones (labs can host zones / pay for storage)
-
-Kachery provides the data storage and transfer for Figurl
 
 ---
 
@@ -285,7 +282,7 @@ Neurodata types: [ImageSegmentation](https://flatironinstitute.github.io/neurosi
 neurosift view-nwb /path/to/file.nwb
 ```
 
-This will open a web browser window with the Neurosift web app pointing to a symlinked copy of your file. You can then browse the file and visualize its contents.
+Will open Neurosift in a browser.
 
 ---
 
@@ -293,26 +290,23 @@ This will open a web browser window with the Neurosift web app pointing to a sym
 
 Protocaas is a **prototype** web-based tool for analyzing neurophysiology data in the cloud (or with cluster/local compute).
 
+- See also: [NeuroCAAS](https://www.neurocaas.org/), [SpikeInterface-cloud](https://github.com/catalystneuro/spikeinterface_cloud)
 - Under heavy development with Ben Dichter and Luiz Tauffer (last couple of months)
 - Enable labs to use cloud resources to run analysis pipelines on their data
-- Also allow option of using local machines or compute clusters
-- Starting with spike sorting, but will expand
-- Tight integration with DANDI and NWB
-- Uses SpikeInterface and SI spike sorter docker images
+- Also allow using local machines or compute clusters
+- Initial focus is spike sorting, but will expand
+- Tight integration with NWB and DANDI
+- Uses [SpikeInterface](https://github.com/spikeinterface/spikeinterface) and [spikeinterface-dockerfiles](https://github.com/SpikeInterface/spikeinterface-dockerfiles)
 
 ---
 
-## Protocaas: spike sorting
+## Protocaas: spike sorting steps
 
-- Step 1: Prepare NWB files, create a dandiset, upload raw data
-- Step 2: Create a Protocaas project and import the dandiset
-- Step 3: Launch spike sorting from the web GUI
-    - Select algorithm and parameters
-    - Can be configured to use cloud resources (AWS Batch), Slurm cluster, or local machine
+- Step 1: Prepare NWB files, **create a dandiset**, upload raw data (or use existing)
+- Step 2: Create a Protocaas project and **import the dandiset** (does not create a copy)
+- Step 3: **Launch spike sorting** from the web GUI (configure compute resource)
 - Step 4: Browse outputs using Neurosift
-- Step 5: Upload outputs to dandiset
-    - Upload job launched from Protocaas GUI, runs in cloud
-    - Either upload to source dandiset or a new one
+- Step 5: **Upload outputs to dandiset** (existing or new)
 
 ---
 
@@ -322,18 +316,16 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 
 <img src="https://github.com/magland/magland-odin-symposium-2023/assets/3679296/22a5ac60-0d8c-403c-a4e2-2f38ba54efbd" width="45%" />
 
----
-
-## Protocaas spike sorting: Import the raw NWB files from DANDI
-
-<img src="https://user-images.githubusercontent.com/3679296/272281764-e9aa69d8-72a2-49bc-ad4e-89b468b6d5d2.png" width=90% />
+- Log in with GitHub
+- [Give it a try](https://protocaas.vercel.app) - just a prototype
 
 ---
 
 ## Protocaas spike sorting: Import the raw NWB files from DANDI
 
-- Protocaas project files point to objects in cloud storage
-- The imported files are only pointers to the DANDI files
+<img src="https://user-images.githubusercontent.com/3679296/272281764-e9aa69d8-72a2-49bc-ad4e-89b468b6d5d2.png" width=80% />
+
+**Does not create a copy (links only)**
 
 ---
 
@@ -402,7 +394,7 @@ https://protocaas.vercel.app/project/4b4d3486?tab=project-files
 
 ---
 
-## Protocaas containerized processors
+## Protocaas: containerized processors
 
 - Each spike sorter is a processor within a Protocaas app
 - Existing apps: [Kilosort 2.5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort2_5/main), [Kilosort 3](https://github.com/scratchrealm/pc-spike-sorting/blob/main/kilosort3/main) and [MountainSort 5](https://github.com/scratchrealm/pc-spike-sorting/blob/main/mountainsort5/main)
@@ -413,7 +405,7 @@ https://protocaas.vercel.app/project/4b4d3486?tab=project-files
 
 ---
 
-## Protocaas compute resources
+## Protocaas: compute resources
 
 ![bg right:40% 90%](https://user-images.githubusercontent.com/3679296/272931152-c8d5bccb-2349-4326-b802-f95f141b508a.png)
 
@@ -430,16 +422,17 @@ https://protocaas.vercel.app/project/4b4d3486?tab=project-files
 
 ## Summary
 
-Some tools for visualization and analysis of neurophysiology data are in progress:
+Some tools for visualization and analysis of neurophysiology data:
 
 - Figurl
     - Stable
 - Neurosift
     - Initial version is stable
 - Protocaas
+    - Prototype
     - Under active development, with CatalystNeuro
     - Almost ready for beta testers
-    - Submit your name ideas!
+    - Please submit your name ideas!
 
 ---
 
@@ -457,4 +450,4 @@ Jeff Soules, Ben Dichter, Cody Baker
 
 Ben Dichter, Luiz Tauffer
 
-##### Thanks also to the DANDI team!
+##### Thanks to the NWB and DANDI teams!
