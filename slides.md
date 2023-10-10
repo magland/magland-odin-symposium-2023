@@ -38,7 +38,7 @@ Follow along: https://github.com/magland
 
 ---
 
-## We will introduce three web-based tools for neurophysiology visualization and analysis
+## I will introduce three web-based tools for neurophysiology visualization and analysis
 
 - [Figurl](https://github.com/flatironinstitute/figurl): framework for creating shareable interactive visualizations
 - [Neurosift](https://github.com/flatironinstitute/neurosift): static web app for visualizing NWB files hosted in the cloud (DANDI)
@@ -120,7 +120,7 @@ print(url)
 
 ## Figurl / SpikeInterface integration ([figurl](https://figurl.org/f?v=gs://figurl/spikesortingview-10&d=sha1://8d61e59b2806cf927ca1bd265923c23f5c37b990&label=experiment1_Record%20Node%20104%23Neuropix-PXI-100.ProbeA-AP_recording1%20-%20kilosort2_5%20-%20Sorting%20Summary))
 
-<img src="https://user-images.githubusercontent.com/3679296/271270920-8f10b747-bac7-4664-b8fd-bb6cd5867d18.svg" height="95%" />
+<img src="https://user-images.githubusercontent.com/3679296/271270920-8f10b747-bac7-4664-b8fd-bb6cd5867d18.svg" height="95%" width="95%" />
 
 ---
 
@@ -216,7 +216,7 @@ Browse to a DANDI NWB file and click to open in Neurosift
 ---
 ## Neurosift: NWB file browser
 
-<img src="https://user-images.githubusercontent.com/3679296/272936637-c20dec5c-57b4-4d89-a598-2aa83834c6db.png" height="90%" />
+<img src="https://user-images.githubusercontent.com/3679296/272936637-c20dec5c-57b4-4d89-a598-2aa83834c6db.png" height="90%" width="90%" />
 
 [link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced)
 
@@ -224,7 +224,7 @@ Browse to a DANDI NWB file and click to open in Neurosift
 
 ## Neurosift: ElectricalSeries
 
-<img src="https://user-images.githubusercontent.com/3679296/258136572-7a552496-b2a5-462b-bbf4-bf85de966a4c.png" height="80%" />
+<img src="https://user-images.githubusercontent.com/3679296/258136572-7a552496-b2a5-462b-bbf4-bf85de966a4c.png" height="80%" width="80%" />
 
 [link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=neurodata-item:/acquisition/ElectricalSeries|ElectricalSeries&tab-time=0,0.05385543094453243,0.009716474540105546)
 
@@ -245,7 +245,7 @@ Forked version of h5wasm that uses efficient/smart chunking optimized for readin
 
 ## Neurosift: Raster plot (spike trains)
 
-<img src="https://user-images.githubusercontent.com/3679296/257921972-ae07e2c4-a30e-4325-9fdf-e14e20309d09.png" height="70%" />
+<img src="https://user-images.githubusercontent.com/3679296/257921972-ae07e2c4-a30e-4325-9fdf-e14e20309d09.png" height="70%" width="70%" />
 
 [link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced&tab=view:RasterPlot|/units&tab-time=0.0018000000000029104,239.58180000000007,96.43037142857143)
 
@@ -260,7 +260,7 @@ Forked version of h5wasm that uses efficient/smart chunking optimized for readin
 
 ## Neurosift: Peri-stimulus time histogram (PSTH)
 
-<img src="https://user-images.githubusercontent.com/3679296/257919770-d889d459-9052-4ea0-b378-b6b5ad2fbf30.png" height="70%" />
+<img src="https://user-images.githubusercontent.com/3679296/257919770-d889d459-9052-4ea0-b378-b6b5ad2fbf30.png" height="70%" width="70%" />
 
 [link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/df3/e3f/df3e3f73-50ab-42b4-8827-82664ddd474a&tab=view:PSTH|/intervals/trials)
 
@@ -391,6 +391,14 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 - Access to sorters: not always easy to set up even when using SpikeInterface
 - Collaboration: add other GitHub users to a workspace
 - Integration with DANDI
+
+---
+
+## Protocaas: Initial experiments
+
+<img src="https://user-images.githubusercontent.com/3679296/273744807-7095fa2a-171a-4ee6-a173-a33f9fba4e0d.png" width="85%" height="85%" />
+
+https://protocaas.vercel.app/project/4b4d3486?tab=project-files
 
 ---
 
