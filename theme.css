@@ -3,17 +3,23 @@
 @import 'default';
 
 section {
+    background: white;
+    padding-left:40px;
+    display: block;
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     color: #F6862D; /* This is CCM color */
+    padding-top: 5cqmax;
 }
 
 h2 {
     color: #AA5;
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: #F6862D; /* This is CCM color */
+    padding-top: 25px;
+    padding-bottom: 15px;
 }
 
 p {

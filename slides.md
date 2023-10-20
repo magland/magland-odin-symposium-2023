@@ -2,26 +2,21 @@
 marp: true
 paginate: true
 theme: magland-theme
+header: <img src="https://user-images.githubusercontent.com/3679296/276917690-ed331783-4853-44ea-969f-b29d9415d21d.png" style="margin-left:15px" width="200px" />
 footer: Magland ODIN Symposium 2023
 ---
 
 <!-- For using custom theme, see https://github.com/orgs/marp-team/discussions/115 -->
 
-## Web-based visualization and analysis of neurophysiology data
+# Web-based visualization and analysis of neurophysiology data
 
 ![bg right:30% 100%](https://user-images.githubusercontent.com/3679296/273382387-e0e76888-5edf-4b20-8a76-eeb02be434cc.png)
 
 Jeremy Magland, Center for Computational Mathematics, Flatiron Institute
 
-... with ...
+<br />
 
-- Flatiron Institute: Jeff Soules
-- Frank lab: Loren Frank, Eric denovellis, Kyu Hyun Lee, Alison Comrie, Michael Coulter
-- CatalystNeuro: Ben Dichter, Alessio Buccino, Luiz Tauffer, Cody Baker
-
-ODIN Symposium 2023
-
-Follow along: https://github.com/magland
+Open Data in Neurophysiology (ODIN) Symposium 2023, McGovern Institute for Brain Research, MIT
 
 ---
 
@@ -94,7 +89,7 @@ print(url)
 
 ---
 
-## Figurl / SpikeInterface integration (with Alessio)
+## Figurl / SpikeInterface integration (with Alessio Buccino)
 
 <img src="https://user-images.githubusercontent.com/3679296/271273000-1cc5e88b-2a8b-4ae6-9076-938c76d59cf5.png" width="100%" >
 
@@ -213,7 +208,7 @@ Browse to a DANDI NWB file and click to open in Neurosift
 ---
 ## Neurosift: NWB file browser
 
-<img src="https://user-images.githubusercontent.com/3679296/272936637-c20dec5c-57b4-4d89-a598-2aa83834c6db.png" height="90%" width="90%" />
+<img src="https://user-images.githubusercontent.com/3679296/272936637-c20dec5c-57b4-4d89-a598-2aa83834c6db.png" height="80%" width="80%" />
 
 [link](https://flatironinstitute.github.io/neurosift/?p=/nwb&url=https://dandiarchive.s3.amazonaws.com/blobs/c86/cdf/c86cdfba-e1af-45a7-8dfd-d243adc20ced)
 
@@ -323,7 +318,7 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 
 ## Protocaas spike sorting: Import the raw NWB files from DANDI
 
-<img src="https://user-images.githubusercontent.com/3679296/272281764-e9aa69d8-72a2-49bc-ad4e-89b468b6d5d2.png" width=80% />
+<img src="https://user-images.githubusercontent.com/3679296/272281764-e9aa69d8-72a2-49bc-ad4e-89b468b6d5d2.png" width=70% />
 
 **Does not create a copy (links only)**
 
@@ -388,7 +383,7 @@ Protocaas is a **prototype** web-based tool for analyzing neurophysiology data i
 
 ## Protocaas: Initial experiments
 
-<img src="https://user-images.githubusercontent.com/3679296/273744807-7095fa2a-171a-4ee6-a173-a33f9fba4e0d.png" width="85%" height="85%" />
+<img src="https://user-images.githubusercontent.com/3679296/273744807-7095fa2a-171a-4ee6-a173-a33f9fba4e0d.png" width="75%" height="75%" />
 
 https://protocaas.vercel.app/project/4b4d3486?tab=project-files
 
